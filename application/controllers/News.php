@@ -35,4 +35,29 @@ class News extends CI_Controller
         $this->load->view('news/view', $data);
         $this->load->view('templates/footer');
     }
+
+    public function create()
+    {
+        // load form helper to create forms with CSRF token
+        $this->load->helper('form');
+        // load form validation library
+        $this->load->library('form_validation');
+
+        $data['title'] = 'Create news item';
+
+        // set validation rules for title input
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('text', 'Text', 'required');
+
+        // runs the validation, if it fails opens create news item view
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('news/create');
+            $this->load->view('templates/footer');
+        } else {
+            // creates news item and displayes success view
+            $this->news_model->set_news();
+            $this->load->view('news/success');
+        }
+    }
 }
