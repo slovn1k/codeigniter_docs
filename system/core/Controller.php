@@ -96,7 +96,7 @@ class CI_Controller
      * @static
      * @return    object
      */
-    function &get_instance() {
+    static function &get_instance() {
         return self::$instance;
     }
 
