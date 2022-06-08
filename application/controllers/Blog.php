@@ -6,6 +6,10 @@ class Blog extends CI_Controller
     {
         parent::__construct();
         // Your own constructor code
+
+        // this is an example of loading model and renaming it
+        // if we want to autoload models, in autoload.php config, we can set models to autoload on project initialization
+        $this->load->model('some_model', 'renamed_model');
     }
 
     //example
