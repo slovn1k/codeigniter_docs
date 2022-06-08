@@ -9,7 +9,13 @@ class Blog extends CI_Controller
 
         // this is an example of loading model and renaming it
         // if we want to autoload models, in autoload.php config, we can set models to autoload on project initialization
-        $this->load->model('some_model', 'renamed_model');
+        // $this->load->model('some_model', 'renamed_model');
+
+		// loading helper
+        $this->load->helper('url');
+		// loading multiple helpers
+		// $this->load->helper(array('helper_1', 'helper_2'));
+		// we can autoload helpers in autoload config file
     }
 
     //example

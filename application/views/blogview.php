@@ -14,6 +14,9 @@
 	<?= $item ?>
 	<?php endforeach; ?>
 
+	<!-- create a link using function from url helper -->
+	<?= anchor('/blog/comments/', 'Click here')?>
+
 </body>
 
 </html>
