@@ -11,6 +11,17 @@ class Pages extends CI_Controller
 
 		// Load multiple libraries using array
 		$this->load->library(array('email', 'table'));
+
+		// Loading a driver, driver is a library with multiple libraries
+		$this->load->driver('cache');
+
+		// Sample driver directory and file structure layout:
+		// /application/libraries/Driver_name
+		// Driver_name.php
+		// drivers
+		// Driver_name_subclass_1.php
+		// Driver_name_subclass_2.php
+		// Driver_name_subclass_3.php
 	}
 
 	public function view($page = 'home')
